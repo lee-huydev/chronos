@@ -1,0 +1,32 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+
+# Runtime data
+data/chronos_save.csv
+*.csv
+!docs/*.csv
+
+# Compiler / IDE
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dylib
+*.dSYM/
+
+.vscode/
+.vs/
+.idea/
+*.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# OS
+.DS_Store
+Thumbs.db
