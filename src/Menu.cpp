@@ -16,6 +16,8 @@
 #include "FileHandler.h"
 #include "TaskFilter.h"
 #include "UrgencyCalculator.h"
+#include <thread> 
+#include <chrono> 
 
 namespace {
 std::string trim(std::string s) {
@@ -422,6 +424,12 @@ void Menu::handleStressTest() {
                    Date(1, 1, 2026), Date(31, 12, 2026), Priority::LOW);
             demo.addTask(t);
             ++added;
+
+            // In thông báo và Sleep 500ms
+            if (added % 1000 == 0 || added == 9999) {
+                std::cout << "[INFO] Da them thanh cong " << added << " tasks.\n";
+                std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            }
         }
     } catch (const BufferOverflowException& e) {
         caught = true;
