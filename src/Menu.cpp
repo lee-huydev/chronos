@@ -359,8 +359,9 @@ void Menu::handleSaveLoad() {
 }
 
 void Menu::handleSearch() {
-    std::string kw = readString("Tu khoa tim kiem: ");
-    auto results = TaskFilter::searchByKeyword(currentProject.getAllTasks(), kw);
+    std::string q = readString(
+        "Tim kiem (text | p:HIGH | s:DONE | dd:DD/MM/YYYY-DD/MM/YYYY | od:true): ");
+    auto results = TaskFilter::applyFilter(currentProject.getAllTasks(), q);
     std::cout << "Ket qua: " << results.size() << " task\n";
     displayTaskTable(results);
 }
