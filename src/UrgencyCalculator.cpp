@@ -25,7 +25,5 @@ void UrgencyCalculator::sortByDeadline(std::vector<Task>& tasks) {
 }
 
 void UrgencyCalculator::sortByPriority(std::vector<Task>& tasks) {
-    std::sort(tasks.begin(), tasks.end(), [](const Task& a, const Task& b) {
-        return static_cast<int>(a.getPriority()) > static_cast<int>(b.getPriority());
-    });
+    std::sort(tasks.begin(), tasks.end());
 }
